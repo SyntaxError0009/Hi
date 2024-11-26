@@ -1,104 +1,138 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>This one is for my Varchhu</title>
-
-<style type="text/css">
-@font-face {
-	font-family: digit;
-	src: url('digital-7_mono.ttf') format("truetype");
-}
-</style>
-<link href="css/default.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/garden.js"></script>
-<script type="text/javascript" src="js/functions.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This one is for my NAROO!!!!!</title>
+    <script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+    <style>
+        @font-face {
+            font-family: digit;
+            src: url('https://fonts.cdnfonts.com/s/64976/Digital7-Mono.woff') format('woff');
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+        }
+        #mainDiv {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        #code {
+            text-align: left;
+            font-family: monospace;
+            color: #333;
+            padding: 20px;
+            background: #eee;
+            border-radius: 8px;
+        }
+        #heartspan a {
+            font-size: 48px;
+            color: red;
+            text-decoration: none;
+        }
+        #loveHeart {
+            margin-top: 20px;
+            position: relative;
+        }
+        canvas {
+            background-color: transparent;
+            width: 100%;
+            height: auto;
+        }
+        .signature {
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-
 <body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="comments">/**</span><br />
+                <span class="space"/><span class="comments">*THE CODE OF LOVE</span><br />
+                <span class="space"/><span class="comments">*/</span><br />
+                Hey Girl!<br />
+                Do you remember the day we first met?<br />
+                <span class="comments">// The HAMO-LAB Friday.</span><br />
+                Since that day a spark began;<br />
+                <span class="comments">// Your face, your voice, your words.</span><br />
+                Your everything got imprinted in my heart;<br />
+                As time went on;<br />
+                The bond grew stronger and stronger;<br />
+                Journey from infatuation to love;<br />
+                We have traveled a long way together;<br />
+                There have been fights;<br />
+                <span class="comments">// And I'm sure there will be more.</span><br />
+                But our bond will always grow back stronger;<br />
+                <br />
+                All I want to say is:<br />
+                Baby, I will love you forever;<br />
+                <br />
+                Now, if you want to hug me, you can touch the heart below:<br />
+                <br />
+                <span id="heartspan">
+                    <a href="https://cdn.discordapp.com/attachments/1310669992743931935/1310979708904538163/20241126_174455.jpg">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </span>
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        FOREVER
+                        <div id="elapseClock"></div>
+                    </div>
+                    <div id="loveu">
+                        I LOVE YOU SO MUCH<br />
+                        <div class="signature">- NARIN!!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div id="mainDiv">
-	<div id="content">
-		<div id="code">
-			<span class="comments">/**</span><br />
-			<span class="space"/><span class="comments">*THE CODE OF LOVE</span><br />
-			<span class="space"/><span class="comments">*/</span><br />
-			Hey Girl !<br />
-			Do you remember the day we first met?<br />
-			<span class="comments">// The ET-LAB Friday. </span><br />
-			Since that day a spark begun;<br />
-			<span class="comments">// Your face Your Voice Your Words.</span><br />
-			Your everything got imprinted in my heart;<br />
-			As the time went on;<br />
-			The Bond grew stronger and stronger;<br />
-			Journey from Infatuation to Love;<br />
-			We have traveled a long way together;<br />
-			There have been fights ;<br />
-			<span class="comments">// And I'm sure there will be more.</span><br />
-			But our Bond will always grow back Stronger;<br />
-			<br>
-			<br>
-			All I want to say is:<br />
-			Baby, I will love you forever;<br />
-			<br>
-			<br>
-			Now If you want to hug me you can touch the heart below<br />
-			<br>
-			<span id="heartspan">
-			<a href="image.jpg"><i class="fas fa-heart" id="icon"></i></a>
-			</span>
-		</div>
-		<div id="loveHeart">
-			<canvas id="garden"></canvas>
-			<div id="words">
-				<div id="messages">
-					वर्षा ऋतु FOREVER
-					<div id="elapseClock"></div>
-				</div>
-				<div id="loveu">
-					I LOVE YOU SO MUCH<br/>
-					<div class="signature">- RITVIK</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const canvas = document.getElementById('garden');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 800;
+            canvas.height = 400;
 
-<script type="text/javascript">
-var offsetX = $("#loveHeart").width() / 2;
-var offsetY = $("#loveHeart").height() / 2 - 55;
-var together = new Date();
-together.setFullYear(2016, 8, 5);
-together.setHours(16);
-together.setMinutes(30);
-together.setSeconds(0);
-together.setMilliseconds(0);
+            // Draw a heart on the canvas for fun
+            function drawHeart(x, y, size, color) {
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.bezierCurveTo(x, y - size / 2, x + size, y - size / 2, x + size, y);
+                ctx.bezierCurveTo(x + size, y + size, x, y + size * 1.5, x - size, y);
+                ctx.bezierCurveTo(x - size, y - size / 2, x, y - size / 2, x, y);
+                ctx.closePath();
+                ctx.fill();
+            }
 
-if (!document.createElement('canvas').getContext) {
-	var msg = document.createElement("div");
-	msg.id = "errorMsg";
-	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-	document.body.appendChild(msg);
-	$("#code").css("display", "none")
-	$("#copyright").css("position", "absolute");
-	$("#copyright").css("bottom", "10px");
-	document.execCommand("stop");
-} else {
-	setTimeout(function () {
-		startHeartAnimation();
-	}, 5000);
+            drawHeart(400, 200, 50, 'red');
 
-	timeElapse(together);
-	setInterval(function () {
-		timeElapse(together);
-	}, 500);
+            const startDate = new Date(2016, 7, 5, 16, 30, 0);
+            const elapseClock = document.getElementById('elapseClock');
 
-	adjustCodePosition();
-	$("#code").typewriter();
-}
-</script>
+            function updateClock() {
+                const now = new Date();
+                const diff = now - startDate;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+                elapseClock.innerText = `Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`;
+            }
+
+            updateClock();
+            setInterval(updateClock, 1000);
+        });
+    </script>
 </body>
-</html>
+		</html>
